@@ -1,0 +1,68 @@
+.technology-picture-portrait {
+    display: none;
+}
+
+.technology-picture-landscape {
+    width: 100%;
+    display: grid;
+    grid-area: picture;
+    margin-top: 1.5rem;
+}
+
+
+
+@media (min-width: 48rem) and (max-width: 89.99rem){
+    .technology-wrapper {
+        display: grid;
+        grid-template-columns: minmax(1rem, 1fr) minmax(0, 40rem) minmax(1rem, 1fr);
+        grid-template-areas:
+        '. title .'
+        'picture picture picture'
+        '. circles .'
+        '. content .';
+    }
+    
+    .technology-picture-portrait {
+        display: none;
+    }
+
+    .technology-picture-landscape {
+        width: 100%;
+        display: grid;
+        grid-area: picture;
+    }
+
+    .technology-content {
+        grid-area: content;
+    }
+}
+
+@media (min-width: 90rem) {    
+    .technology-wrapper {
+        display: grid;
+        grid-template-columns: minmax(1rem, 1fr) minmax(1rem, 1fr) repeat(2, minmax(0, 40rem));
+        grid-template-areas:
+        '. title title title'
+        '. circles content picture';
+        margin-top: 3rem;
+    }
+    
+    .technology-picture-portrait {
+        display: grid;
+        grid-area: picture;
+        justify-self: flex-end;
+    }
+
+    .technology-picture-landscape {
+        display: none;
+    }
+
+    .technology-content {
+        grid-area: content;
+        text-align: left;
+        align-self: center;
+        margin-left: 3rem;
+    }
+    
+
+}

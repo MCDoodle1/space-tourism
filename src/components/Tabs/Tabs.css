@@ -1,0 +1,38 @@
+.tabs-menu {
+    display: flex;
+    width: clamp(5rem, 17rem, 90%);
+    margin: auto;
+    justify-content: space-between;
+    color: hsl(var(--primary-color));
+    gap: 0;
+    margin-bottom: 1rem;
+    align-items: flex-start;
+}
+
+.tabs-menu > li.active{
+    color: hsl(var(--neutral-color-light));
+    padding-bottom: .5em;
+    border-bottom: 0.188rem solid hsl(var(--neutral-color-light));
+    cursor: pointer;
+}
+
+.tabs-menu > li:hover,
+.tabs-menu > li:focus {
+    padding-bottom: .5em;
+    border-bottom: 0.188rem solid hsl(var(--neutral-color-light));
+    cursor: pointer;
+    border-color: hsl(var(--neutral-color-light), 0.5);
+    }
+
+
+.tabs-menu > a:first-child {
+    margin-block-start: 0;
+}
+
+@media (min-width: 90rem) {    
+    .tabs-menu {
+        margin-left: 0;
+    }
+}
+
+

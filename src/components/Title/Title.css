@@ -1,0 +1,15 @@
+@media (min-width: 48rem) and (max-width: 90rem) {
+.title {
+    grid-area: title;
+    text-align: left;
+    margin-block: 1em;
+    }
+}
+
+@media (min-width: 90rem)  {
+.title {
+    grid-area: title;
+    text-align: left;
+    margin-block: 0 1em;
+    }   
+}

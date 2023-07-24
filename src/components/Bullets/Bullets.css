@@ -1,0 +1,42 @@
+bullets > a:first-child {
+    margin-block-start: 0;
+}
+
+.bullets-menu {
+    grid-area: bullets;
+    display: flex;
+    padding: 2rem;
+    justify-content: center;
+    gap: 2ch;
+}
+
+.bullets-menu > li {
+    width: .6rem;
+    height: .6rem;
+    background-color: hsl(var(--neutral-color-light));
+    opacity: .25;
+    border-radius: 50%;
+}
+
+.bullets-menu > li.active {
+    background-color: hsl(var(--neutral-color-light));
+    opacity: 1;
+}
+
+.bullets-menu li:hover,
+.bullets-menu li:focus {
+    cursor: pointer;
+    opacity: .5
+}
+
+.first-bullet {
+    margin-block-start: 0;
+}
+
+@media (min-width: 90rem) {
+    .bullets-menu {
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0;
+    }
+}

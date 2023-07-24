@@ -1,38 +1,304 @@
-.App {
-  text-align: center;
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
+
+/* https://piccalil.li/blog/a-modern-css-reset/ */
+
+/* Box sizing */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Reset margins */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+    margin: 0; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+body {
+    font-family: var(--ff-sans-regular);
+    font-size: var(--fs-200);
+    font-weight: 400;
+    color: hsl( var(--neutral-color-light) );
+    line-height: 1.5;
+    text-align: center;
+}
+
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+  }
+ 
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+  /* remove animations for people who've turned them off */
+  @media (prefers-reduced-motion: reduce) {  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  
+  :root {
+
+
+    /* Font families. */
+    --ff-serif: 'Bellefair', serif;
+    --ff-sans-condensed: 'Barlow Condensed', sans-serif;
+    --ff-sans-regular: 'Barlow', sans-serif;
+    
+    
+    /* Colour scheme */
+    --primary-color: 231, 77%, 90%;
+    --neutral-color-dark: 230, 35%, 7%;
+    --neutral-color-light: 0, 0%, 100%;
+    
+    
+    /* Font sizes. */
+    --fs-100: 0.875rem; /*  14 px */
+    --fs-200: 0.938rem; /*  15 px */ 
+    --fs-300: 1rem;     /*  16 px */
+    --fs-400: 1.125rem; /*  18 px */
+    --fs-500: 1.25rem;  /*  20 px */
+    --fs-600: 1.5rem;   /*  24 px */
+    --fs-700: 1.75rem;  /*  28 px */
+    --fs-800: 2rem;     /*  32 px */
+    --fs-900: 2.5rem;   /*  40 px */
+    --fs-1000: 3.5rem;  /*  56 px */
+    --fs-1100: 5rem;    /*  80 px */
+    --fs-1200: 6.25rem; /* 100 px */
+    --fs-1300: 9.375rem;/* 150 px */
+    
+    /* Font weight */    
+    --fw-400: 400;
+    --fw-700: 700;
+
+    /* Letter spacing */    
+    --letter-spacing-1 : 1.25px;
+    --letter-spacing-2 : 2.00px;
+    --letter-spacing-3 : 2.35px;
+    --letter-spacing-4 : 2.70px;
+    --letter-spacing-5 : 4.75px;
+  }
+
+@media (min-width: 48rem) {
+  :root {
+    --fs-100: 0.875rem;
+    --fs-200: 1rem;
+    --fs-300: 1.25rem;
+    --fs-400: 1.5rem;
+    --fs-500: 2rem;
+    --fs-600: 2.5rem;
+    --fs-1000: 5rem;
+    --fs-1100: 9.375rem;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 90rem) {
+  :root {
+    --fs-100: 1rem;
+    --fs-200: 1.125rem;
+    --fs-300: 1.75rem;
+    --fs-400: 1.875rem;
+    --fs-500: 2rem;
+    --fs-600: 3.5rem;
+    --fs-1000: 6.25rem;
+    --fs-1100: 9.375rem;
   }
 }
+ 
+  .sr-only {
+    position: absolute; 
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap; /* added line */
+    border: 0;
+  }
+
+  h1 {
+    color: hsl(var(--neutral-color-light));
+    font-family: var(--ff-serif);
+    font-weight: var(--fw-400);
+    font-size: var(--fs-1100);
+    text-transform: uppercase;
+    padding-top: 1.5rem;
+  }
+
+  h1 > span {
+    display: block;
+    color: hsl(var(--primary-color));
+    font-family: var(--ff-sans-condensed);
+    font-size: var(--fs-300);
+    letter-spacing: var(--letter-spacing-4);
+  }
+
+  h2{
+    font-family: var(--ff-serif);
+    font-size: var(--fs-1000);
+    font-weight: var(--fw-400);
+    text-transform: uppercase;
+    padding-block: .25em 0;
+  }
+
+  h3{
+    font-family: var(--ff-serif);
+    font-size: var(--fs-600);
+    font-weight: var(--fw-400);
+    text-transform: uppercase;
+  }
+
+  h4{
+    font-family: var(--ff-serif);
+    font-size: var(--fs-300);
+  }
+
+  h5{
+    font-family: var(--ff-sans-condensed);
+    font-size: var(--fs-300);
+    letter-spacing: var(--letter-spacing-4);
+    text-transform: uppercase;
+    font-weight: var(--fw-400);
+  }
+
+  h5 > span{
+    color: hsl( var(--neutral-color-light) );
+    opacity: .3;
+    font-weight: var(--fw-700);
+    margin-inline-end: 1em;
+  }
+
+  p{
+    color: hsl(var(--primary-color));
+    font-family: var(--ff-sans);
+    font-size: var(--fs-200);
+    line-height: 1.75em;
+  }
+
+  .content-wrapper {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    align-items: center;
+    place-items: center;
+    padding-inline: 1.5rem;
+  }
+
+  .content-wrapper > * {
+    max-width: 50ch;
+  }
+
+  .background- {
+    min-height: 100vh;
+    background: url("../src/assets/home/background-home-mobile.jpg") no-repeat bottom center/cover;
+  }
+
+  .background-Destination {
+    min-height: 100vh;
+    background: url("../src/assets/destination/background-destination-mobile.jpg") no-repeat bottom center/cover;
+  }
+
+  .background-Crew {
+    min-height: 100vh;
+    background: url("../src/assets/crew/background-crew-mobile.jpg") no-repeat bottom center/cover;
+  }
+
+  .background-Technology {
+    min-height: 100vh;
+    background: url("../src/assets/technology/background-technology-mobile.jpg") no-repeat bottom center/cover;
+  }
+
+  @media (min-width: 48rem ) and (max-width: 89.99rem) {
+    .content-wrapper {
+      gap: 3rem;
+    }
+
+    .background- {
+      background: url("../src/assets/home/background-home-tablet.jpg") no-repeat bottom center/cover;
+    }
+  
+    .background-Destination {
+      background: url("../src/assets/destination/background-destination-tablet.jpg") no-repeat bottom center/cover;
+    }
+  
+    .background-Crew {
+      background: url("../src/assets/crew/background-crew-tablet.jpg") no-repeat bottom center/cover;
+    }
+  
+    .background-Technology {
+      background: url("../src/assets/technology/background-technology-tablet.jpg") no-repeat bottom center/cover;
+    }
+  }
+
+  @media (min-width: 90rem) {
+
+    .background- {
+      background: url("../src/assets/home/background-home-desktop.jpg") no-repeat bottom center/cover;
+    }
+  
+    .background-Destination {
+      background: url("../src/assets/destination/background-destination-desktop.jpg") no-repeat bottom center/cover;
+    }
+  
+    .background-Crew {
+      background: url("../src/assets/crew/background-crew-desktop.jpg") no-repeat bottom center/cover;
+    }
+  
+    .background-Technology {
+      background: url("../src/assets/technology/background-technology-desktop.jpg") no-repeat bottom center/cover;
+    }
+
+    .content-wrapper {
+      display: grid;
+      grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0, 40rem)) minmax(2em, 1fr);
+      grid-template-rows: repeat(2, minmax(0, 18rem)) minmax(8em, 1fr);
+      text-align: left;
+      grid-row: 2;
+    }
+    .content-wrapper > *:first-child {
+      grid-column: 2;
+      grid-row: 2;
+  }
+
+    .content-wrapper > *:last-child {
+        grid-column: 3;
+        grid-row: 2;
+        align-self: self-end;
+        justify-self: flex-end;
+        padding-inline-end: 2rem;
+    }
+  }
+
+  
+
+  
+
+

@@ -1,0 +1,42 @@
+.role {
+    font-family: var(--ff-serif);
+    color: var(--neutral-color-dark);
+    opacity: .4;
+    letter-spacing: 0;
+}
+
+
+.name {
+    margin-bottom: 1rem;
+}
+
+.destination-name {
+    font-size: var(--fs-1000);
+}
+
+.hero-text {
+    width: clamp(.5rem, 90vw, 30rem);
+    min-height: 12vh;
+    margin: auto;
+}
+
+.technology-subtitle {
+    font-family: var(--ff-sans-condensed);
+    font-size: var(--fs-100);
+    letter-spacing: var(--letter-spacing-4);
+    text-transform: uppercase;
+    font-weight: var(--fw-400);
+    color: hsl(var(--primary-color));
+    margin-bottom: .25em;
+}
+
+@media (min-width: 90rem) {  
+    h2,  
+    .hero-text {
+        text-align: left;
+    }
+    .hero-text {
+        margin: 0;
+        min-height: 15vh;
+    }
+}

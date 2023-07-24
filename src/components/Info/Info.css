@@ -1,0 +1,64 @@
+.info-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    margin-bottom: 1.5rem;
+}
+
+.distance-container,
+.travel-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5em;
+}
+
+.distance-title,
+.travel-title
+ {
+    color: hsl(var(--primary-color));
+    font-family: var(--ff-sans-condensed);
+    font-size: var(--fs-200);
+    letter-spacing: var(--letter-spacing-3);
+    text-transform: uppercase;
+}
+
+.distance,
+.travel {
+    font-family: var(--ff-serif);
+    font-size: var(--fs-700);
+    text-transform: uppercase;
+}
+
+hr {
+    width: 85%;
+    opacity: .15;
+    margin-block: 2em;
+}
+
+@media (min-width: 48rem) and (max-width: 89.99rem){
+    .info-wrapper {
+        flex-direction: row;
+        justify-content: center;
+        gap: 8rem;
+    }
+}
+
+
+@media (min-width: 90rem) {  
+    hr {
+        margin-top: 3em;
+        margin-left: 0;
+    }  
+    .info-wrapper {
+        flex-direction: row;
+        gap: 3em;
+    }
+    .distance-title,
+    .distance,
+    .travel-title,
+    .travel {
+        text-align: left;
+    }
+  }
+
+  

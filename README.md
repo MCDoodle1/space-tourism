@@ -36,8 +36,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [GitHub Page](https://github.com/MCDoodle1/space-tourism/tree/master)
+- Live Site URL: [Space Tourism Site](https://mcdoodle1.github.io/space-tourism/)
 
 ## My process
 

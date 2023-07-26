@@ -86,7 +86,7 @@ li > span {
 }
 
 
-@media (min-width: 48rem){
+@media (min-width: 48rem) and (max-width: 89.99rem){
     ul {
         display: flex;
         flex-direction: row;
@@ -96,7 +96,7 @@ li > span {
         margin-block-start: 0;
      }
 
-     a[aria-current="page"] > li::after {
+    a[aria-current="page"] > li::after {
         display: none; 
     }
 
@@ -150,10 +150,18 @@ li > span {
 }
 
   @media (min-width: 90rem) {
+    ul {
+        display: flex;
+        flex-direction: row;
+    }
 
     a:first-child {
         margin-block-start: 0;
      }
+
+     a[aria-current="page"] > li::after {
+        display: none; 
+    }
 
     .h-line {
         display: inline-block;
@@ -185,5 +193,21 @@ li > span {
         padding-block-start: 2rem;
         backdrop-filter: blur(20px);
         gap: 5ch;
+    }
+
+    .navbar-menu > a[aria-current="page"] {
+        padding-bottom: 2em;
+        border-bottom: 0.188rem solid hsl(var(--neutral-color-light));
+        border-right: 0;
+        cursor: pointer;
+    }
+
+    .navbar-menu > *:hover,
+    .navbar-menu > *:focus {
+        padding-bottom: 2em;
+        border-bottom: 0.188rem solid hsl(var(--neutral-color-light));
+        border-right: 0;
+        cursor: pointer;
+        border-color: hsl(var(--neutral-color-light), 0.5);
     }
   }

@@ -36,7 +36,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub Page](https://github.com/MCDoodle1/space-tourism/tree/master)
+- Solution URL: [GitHub Page](https://github.com/MCDoodle1/space-tourism)
 - Live Site URL: [Space Tourism Site](https://mcdoodle1.github.io/space-tourism/)
 
 ## My process
@@ -57,6 +57,9 @@ I first examined the page layout of the different versions (mobile, tablet and d
 
 I learned a lot of new CSS from the course and used the Router/Navlink component in React. I also learned to use UseLocation and created a custom hook.
 
+It was quite a challenge to deploy the code on GitHub pages. I had to change the router
+from BrowserRouter to HashRouter for the navigation to work.
+
 ### Continued development
 
 Extend my knowledge of HTML, CSS and React.
@@ -65,6 +68,10 @@ Extend my knowledge of HTML, CSS and React.
 
 - [Build a Space Travel Website](https://scrimba.com/learn/spacetravel) - Scrimba course by Kevin Powel in collaboration with FrontendMentor
 - [React Router](https://reactrouter.com/en/main) - Manual for React Router
+- [Create React App Dev](https://create-react-app.dev/docs/deployment/) - Manual to publish a React app on GitHub Pages
+- [spa-github-pages](https://github.com/rafgraph/spa-github-pages) - Manual to use BrowserRouter on GitHub Pages
+- [StackOverflow](https://stackoverflow.com/) - Can't do without
+
 
 ## Author
 

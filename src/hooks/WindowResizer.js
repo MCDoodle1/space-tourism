@@ -1,26 +1,27 @@
+/* listens to the screen width and returns true if the screen size is smaller than or equal
+to 780 pixels. If the screen size is above the hook returns false
+This is used in Navbar.js to determine where on the page the menu should render 
+(at the right side in a hamburger menu on mobile and at the top for larger screen sizes) */
+
 import { useState, useEffect } from 'react';
-
-/* listens to the screen width that is used in navbar.js as condition to 
-show or hide the hamburger menu */
-
-
-const WindowResizer = () => {    
-    const width = 769
-    const [isMobile, setMobile] = useState(() => window.innerWidth < 769);
-    return (
-        useEffect(() => {
-            const updateMedia = () => {
-            if (window.innerWidth < width) {
-                setMobile(true);
-            } else {
-                setMobile(false);
+const WindowResizer = () => {
+    const [isMobile, setIsMobile] = useState(true);
+    useEffect(() => {
+        
+        function handleResize() {
+            if (window.innerWidth >= 780) {
+                setIsMobile(false);
             }
-            };
-            window.addEventListener('resize', updateMedia);
-            return () => window.removeEventListener('resize', updateMedia);
-        }, [])
-    )       
-    }
-  
-  export default WindowResizer
+            else { setIsMobile(true) }
+        }
+        handleResize();
+        window.addEventListener("resize", handleResize);
+
+        //Cleanup the useEffect when the component unmounts
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+    return isMobile;
+}
+export default WindowResizer;
+
   

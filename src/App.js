@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
@@ -17,6 +17,7 @@ function App() {
   const location = path.split("/")[1];
   const [menuIsActive, setMenuIsActive] = useState(false);
   const [index, setIndex] = useState(0);
+  /* const [isMobile, setMobile] = useState(() => window.innerWidth < 769); */
   
   /* opens and closes hamburger menu */
   const activateMenu = () => 
@@ -34,7 +35,7 @@ function App() {
       <Navbar 
         activateMenu={activateMenu}
         menuIsActive={menuIsActive}
-        resizeWindow={WindowResizer}
+        WindowResizer={WindowResizer}
         handleMouseLeave={handleMouseLeave}
         setIndex={setIndex}
         />

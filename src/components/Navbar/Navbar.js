@@ -4,7 +4,9 @@ import logo from '../../assets/shared/logo.svg';
 import hamburger from '../../assets/shared/icon-hamburger.svg';
 import close from '../../assets/shared/icon-close.svg';
 
-const Navbar = ( {activateMenu, resizeWindow, menuIsActive, handleMouseLeave, setIndex} ) => {
+const Navbar = ( {activateMenu, WindowResizer, menuIsActive, handleMouseLeave, setIndex} ) => {
+
+  const isMobile = WindowResizer();
 
   return (
     <div onMouseLeave={handleMouseLeave} className='navbar-wrapper'>
@@ -27,7 +29,7 @@ const Navbar = ( {activateMenu, resizeWindow, menuIsActive, handleMouseLeave, se
       }
 
       <div className="h-line"></div>
-      { ((menuIsActive && resizeWindow) || !resizeWindow) && 
+      { ((menuIsActive && isMobile) || !isMobile) && 
         <ul className="navbar-menu">
           <NavLink to="/">
           <li><span>00</span>home</li>
